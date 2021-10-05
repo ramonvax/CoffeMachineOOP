@@ -17,14 +17,18 @@ public class AppMachine {
                 System.out.println("\nSystem shutdown");
                 break;
             } else if (command.equals("report")) {
-                System.out.println("alfa test");
+                System.out.println(cashRegister.report());
             } else if (command.equals("espresso") || command.equals("latte") || command.equals("cappuccino")) {
-                System.out.println("beta test");
+                if (command.equals("latte")) {
+                    cashRegister.makePayment(3.8);
+                } else {
+                    System.out.println("error");
+                }
             } else {
                 System.out.println("comand not understood");
             }
-            
         }
+        input.close();
 
     }
 
